@@ -76,3 +76,8 @@ fos_user:
     from_email:
         address: hermeline.rousselet@gmail.com
         sender_name: Hermeline
+
+easy_admin:
+    entities:
+        - WTFBundle\Entity\Conference
+        - WTFBundle\Entity\User
