@@ -23,7 +23,7 @@
                 <td>{{ conference.description }}</td>
                 <td>{% if conference.date %} {{ conference.date|date('Y-m-d H:i:s') }} {% endif %}</td></td>
                 <td>{{ conference.lieu }}</td>
-                <td>{{asset( "conference.image" )}}</td>
+                <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
                 <td>
                     <ul>
                         <li>

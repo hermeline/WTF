@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <th>Image</th>
-                <td><img src="/web/uploads/image/{{ conference.image }}"> </td>
+                <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
             </tr>
         </tbody>
     </table>

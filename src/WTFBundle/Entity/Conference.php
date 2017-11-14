@@ -56,6 +56,7 @@ class Conference
      *
      * @ORM\Column(name="image", type="string", length=255)
      * @Assert\Image()
+     * @Assert\NotBlank(message="S'il vous plait, rajoutez une image")
      */
     private $image;
 
