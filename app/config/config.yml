@@ -79,5 +79,7 @@ fos_user:
 
 easy_admin:
     entities:
-        - WTFBundle\Entity\Conference
-        - WTFBundle\Entity\User
+        Conference:
+            class: WTFBundle\Entity\Conference
+        User:
+            class: WTFBundle\Entity\User
