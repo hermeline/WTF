@@ -81,5 +81,14 @@ easy_admin:
     entities:
         Conference:
             class: WTFBundle\Entity\Conference
+            list:
+                fields:
+                    - id
+                    - title
+                    - description
+                    - lieu
+                    - { property: 'image', type: 'image', base_path: '/uploads/image' }
+                    - date
+                    - auteur
         User:
             class: WTFBundle\Entity\User
