@@ -3,12 +3,15 @@
 namespace WTFBundle\Controller;
 
 use WTFBundle\Entity\Conference;
+use WTFBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\httpFoundation\File\File;
 use Symfony\Component\httpFoundation\File\UploadedFile;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+
 
 /**
  * Conference controller.
@@ -92,29 +95,34 @@ class ConferenceController extends Controller
      */
     public function editAction(Request $request, Conference $conference)
     {
+        $currentId = $this->getUser()->getId();
+        if ($currentId == $conference->getId()) {
+            $deleteForm = $this->createDeleteForm($conference);
+            $editForm = $this->createForm('WTFBundle\Form\ConferenceType', $conference);
+            $editForm->handleRequest($request);
 
-        $deleteForm = $this->createDeleteForm($conference);
-        $editForm = $this->createForm('WTFBundle\Form\ConferenceType', $conference);
-        $editForm->handleRequest($request);
+            if ($editForm->isSubmitted() && $editForm->isValid()) {
+                /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file * */
+                $file = $conference->getImage();
+                if ($file instanceof UploadedFile) {
+                    $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+                    $file->move($this->getParameter('image_directory'), $fileName);
+                }
+                $conference->setImage($fileName);
+                $this->getDoctrine()->getManager()->flush();
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file  **/
-            $file=$conference->getImage();
-            if($file instanceof UploadedFile){
-                $fileName =md5(uniqid()).'.'.$file->guessExtension();
-                $file->move($this->getParameter('image_directory'),$fileName);
+                return $this->redirectToRoute('conference_edit', array('id' => $conference->getId()));
             }
-            $conference->setImage($fileName);
-            $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('conference_edit', array('id' => $conference->getId()));
+            return $this->render('conference/edit.html.twig', array(
+                'conference' => $conference,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
+            ));
         }
-
-        return $this->render('conference/edit.html.twig', array(
-            'conference' => $conference,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        else{
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
     }
 
     /**

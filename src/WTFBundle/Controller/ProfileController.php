@@ -24,7 +24,6 @@ class ProfileController extends BaseController
         }
 
         $currentId= $user->getId();
-        dump($currentId);
         $em = $this->getDoctrine()->getManager();
 
         $conferences = $em->getRepository('WTFBundle:Conference')->findById($currentId);
