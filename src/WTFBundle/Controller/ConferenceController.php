@@ -92,6 +92,7 @@ class ConferenceController extends Controller
      */
     public function editAction(Request $request, Conference $conference)
     {
+
         $deleteForm = $this->createDeleteForm($conference);
         $editForm = $this->createForm('WTFBundle\Form\ConferenceType', $conference);
         $editForm->handleRequest($request);
