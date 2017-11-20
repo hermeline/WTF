@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Une erreur est survenue: {{ status_text }}</title>
+</head>
+<body>
+<div class="pageException">
+    <h1>Oops! Vous ne passerez paaaaas ! </h1>
+    <h2>Le serveur a retourné l'erreur : "{{ status_code }} {{ status_text }}"</h2>
+
+    <h3> {% for previousException in exception.allPrevious|reverse %}
+            {{ previousException.class|abbr_class }} : {{- exception.message|nl2br|format_file_from_text -}}
+        {% endfor %} </h3>
+    <div>
+         <a href="/conference">cliquez ici</a> pour revenir à l'accueil
+    </div>
+</div>
+</body>
+</html>
