@@ -121,7 +121,7 @@ class ConferenceController extends Controller
             ));
         }
         else{
-            throw new AccessDeniedException('This user does not have access to this section.');
+            throw new AccessDeniedException('Vous n\'avez pas accès à cette section.');
         }
     }
 
@@ -133,16 +133,21 @@ class ConferenceController extends Controller
      */
     public function deleteAction(Request $request, Conference $conference)
     {
-        $form = $this->createDeleteForm($conference);
-        $form->handleRequest($request);
+        $currentId = $this->getUser()->getId();
+        if ($currentId == $conference->getId()) {
+            $form = $this->createDeleteForm($conference);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($conference);
-            $em->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->remove($conference);
+                $em->flush();
+            }
+            return $this->redirectToRoute('conference_index');
         }
-
-        return $this->redirectToRoute('conference_index');
+        else{
+            throw new AccessDeniedException('Vous n\'avez pas accès à cette section.');
+        }
     }
 
     /**
