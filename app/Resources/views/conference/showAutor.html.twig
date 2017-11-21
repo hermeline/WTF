@@ -1,0 +1,11 @@
+{% extends 'show.html.twig' %}
+
+{% block Options %}
+
+            <a href="{{ path('conference_edit', { 'id': conference.id }) }}">Edit</a>
+
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+{% endblock %}

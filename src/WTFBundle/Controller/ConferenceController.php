@@ -80,11 +80,17 @@ class ConferenceController extends Controller
      */
     public function showAction(Conference $conference)
     {
-        $deleteForm = $this->createDeleteForm($conference);
-        return $this->render('conference/show.html.twig', array(
-            'conference' => $conference,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        $currentId = $this->getUser()->getId();
+        if ($currentId == $conference->getId()) {
+            $deleteForm = $this->createDeleteForm($conference);
+            return $this->render('conference/showAutor.html.twig', array(
+                'conference' => $conference,
+                'delete_form' => $deleteForm->createView(),
+            ));
+        }
+        else{
+            return $this->render('show.html.twig', array('conference' => $conference));
+        }
     }
 
     /**
