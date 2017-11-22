@@ -1,0 +1,50 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<h2>Mon profil</h2>
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+
+<div>
+    <a href="{{ path('conference_new') }}">Ajouter une conférence</a>
+</div>
+
+<h2>Mes conférences :</h2>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Image</th>
+            <th>Actions</th>
+            <th>Auteur</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for conference in conferences %}
+            <tr>
+                <td>{{ conference.title }}</td>
+                <td>{{ conference.description }}</td>
+                <td>{% if conference.date %} {{ conference.date|date('Y-m-d H:i:s') }} {% endif %}</td></td>
+                <td>{{ conference.lieu }}</td>
+                <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('conference_show', { 'id': conference.id }) }}">Voir plus</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('conference_edit', { 'id': conference.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{ conference.auteur }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

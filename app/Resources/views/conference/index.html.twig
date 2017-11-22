@@ -6,35 +6,22 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Date</th>
                 <th>Lieu</th>
                 <th>Image</th>
-                <th>Actions</th>
                 <th>Auteur</th>
             </tr>
         </thead>
         <tbody>
         {% for conference in conferences %}
             <tr>
-                <td><a href="{{ path('conference_show', { 'id': conference.id }) }}">{{ conference.id }}</a></td>
                 <td>{{ conference.title }}</td>
                 <td>{{ conference.description }}</td>
                 <td>{% if conference.date %} {{ conference.date|date('Y-m-d H:i:s') }} {% endif %}</td></td>
                 <td>{{ conference.lieu }}</td>
                 <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('conference_show', { 'id': conference.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('conference_edit', { 'id': conference.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
                 <td>{{ conference.auteur }}</td>
             </tr>
         {% endfor %}

@@ -20,7 +20,7 @@ class ProfileController extends BaseController
     {
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
-            throw new AccessDeniedException('This user does not have access to this section.');
+            throw new AccessDeniedException('Vous n\'avez pas accès à cette section.');
         }
 
         $currentId= $user->getId();
