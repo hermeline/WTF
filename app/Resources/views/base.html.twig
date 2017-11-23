@@ -2,8 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Bienvenue !{% endblock %}</title>
+        {% block stylesheets %}     {% stylesheets 'bundles/wtf/css/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />{% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>

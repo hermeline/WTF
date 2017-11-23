@@ -1,0 +1,8 @@
+body{background-color: black;
+color:lightgrey;}
+h1, h2{
+    color:lawngreen;
+}
+.logged{text-align: right;}
+th, td{border-bottom: 1px solid lawngreen;}
+img{max-width: 300px;}
