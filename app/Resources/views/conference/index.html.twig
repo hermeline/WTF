@@ -3,18 +3,30 @@
 {% block body %}
     <h1>Liste des conférences</h1>
 
-    <table>
-        <tbody>
+
+    <div class="liste">
         {% for conference in conferences %}
-            <tr>
-                <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
-                <td>{{ conference.title }}</td>
-                <td>{{ conference.description }}</td>
-                <td>{% if conference.date %} {{ conference.date|date('Y-m-d H:i:s') }} {% endif %}</td></td>
-                <td>{{ conference.lieu }}</td>
-                <td>ajouté par {{ conference.auteur }}</td>
-            </tr>
+            <div class="elementListe">
+                <div class="infoListe">
+                    <div><h3>{{ conference.title }} </h3> </div>
+                    <div><h4>{{ conference.lieu }}</h4>
+                    {% if conference.date %} {{ conference.date|date('d-m-Y H:i') }} {% endif %}
+                    </div>
+                </div>
+                <div class="contenuListe">
+                    <div class="description">
+                        <p>{{ conference.description }}</p>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('uploads/image/' ~ conference.image) }}">
+                    </div>
+                </div>
+                <div class="addedBy">
+                    <p>ajouté par {{ conference.auteur }}</p>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
+
+
 {% endblock %}
