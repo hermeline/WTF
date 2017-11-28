@@ -9,13 +9,13 @@ namespace WTFBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Test\TestBundle\Entity\AbstractGMapEntity
+ * Test\TestBundle\Entity\AbstractGMap
  *
  * @author Sullivan SENECHAL
  *
  * @ORM\MappedSuperclass
  */
-abstract class AbstractGMapEntity
+abstract class AbstractGMap
 {
     /**
      * @var string
