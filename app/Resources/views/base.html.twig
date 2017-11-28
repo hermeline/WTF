@@ -2,17 +2,20 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Bienvenue !{% endblock %}</title>
-        {% block stylesheets %}     {% stylesheets 'bundles/wtf/css/*' filter='cssrewrite' %}
+        <title>{% block title %}World Tech Fest - WTF{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets 'bundles/web/css/*' filter='cssrewrite' %}
             <link rel="stylesheet" href="{{ asset_url }}" />{% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% javascripts
-        'web/public/components/jquery/jquery.js'
-        'web/public/js/*' %}
+        {% block javascripts %}
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3nhLGFS2al-DUObkMiBZ2IlRZEq9M9Y&callback=initMap">
+            </script>
+            {% javascripts 'web/public/js/*' %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}{% endblock %}
     </body>

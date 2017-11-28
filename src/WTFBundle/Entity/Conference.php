@@ -5,7 +5,7 @@ namespace WTFBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
-use WTFBundle\Entity\AbstractGMapEntity;
+use WTFBundle\Entity\AbstractGMap;
 
 /**
  * Conference
@@ -13,7 +13,7 @@ use WTFBundle\Entity\AbstractGMapEntity;
  * @ORM\Table(name="conference")
  * @ORM\Entity(repositoryClass="WTFBundle\Repository\ConferenceRepository")
  */
-class Conference extends AbstractGMapEntity
+class Conference extends AbstractGMap
 {
     /**
      * @var int

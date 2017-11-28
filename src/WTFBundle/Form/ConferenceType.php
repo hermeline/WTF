@@ -24,7 +24,8 @@ class ConferenceType extends AbstractType
                     'data_class' => null,
                     'label'=>'Picture(Image File)',
                     'attr'=>['class'=>'form-control']
-                ]);
+                ])
+            ;
     }
     
     /**

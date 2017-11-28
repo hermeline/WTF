@@ -4,6 +4,7 @@ namespace WTFBundle\Controller;
 
 use WTFBundle\Entity\Conference;
 use WTFBundle\Entity\User;
+use WTFBundle\Entity\AbstractGMap;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

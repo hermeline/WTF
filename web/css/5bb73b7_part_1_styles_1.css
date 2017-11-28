@@ -1,14 +1,12 @@
-body{background-color: #383838;
-color:lightgrey;}
-h1, h2{
-    color:#379617;
-    margin-bottom: 10%;
-}
+body{background-color: #383838;}
+h1{color: red;}
+
 .logged{text-align: right;}
 img{max-height: 300px; max-width: 300px;}
 
 .liste{display:flex; justify-content: space-between; flex-direction: column;}
-.elementListe{display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid lawngreen;}
+.elementListe{display: flex; flex-direction: column;
+    justify-content: space-between; border-bottom: 1px solid lawngreen;}
 .infoListe, .contenuListe{display: flex; justify-content: space-between;}
 .description, .image{width: 48%}
 .addedBy{width:100%; text-align: right;}

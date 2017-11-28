@@ -48,6 +48,6 @@ class GMapAddressType extends AbstractType
 
     public function getName()
     {
-        return 'gmap_address'; // Le nom de notre champ, il sera utilisé après
+        return 'gmap_addresse'; // Le nom de notre champ, il sera utilisé après
     }
 }

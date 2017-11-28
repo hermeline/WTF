@@ -5,14 +5,14 @@
 
     <script type="text/javascript">
         $(function() {
-            var addresspickerMap = $("#{{ form.address.get("id") }}").addresspicker({
+            var addresspickerMap = $("#{{ form.address.vars.id }}").addresspicker({
                 regionBias: "fr",
                 elements: {
                     map: "#{{ id }}_map",
-                    locality: '#{{ form.ville.get("id") }}',
-                    country:  '#{{ form.pays.get("id") }}',
-                    lat:      "#{{ form.lat.get("id") }}",
-                    lng:      "#{{ form.lng.get("id") }}"
+                    locality: '#{{ form.ville.vars.id }}',
+                    country:  '#{{ form.pays.vars.id }}',
+                    lat:      "#{{ form.lat.vars.id }}",
+                    lng:      "#{{ form.lng.vars.id }}"
                 }
             });
             var gmarker = addresspickerMap.addresspicker("marker");
