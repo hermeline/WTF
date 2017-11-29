@@ -2,8 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Bienvenue !{% endblock %}</title>
-        {% block stylesheets %}     {% stylesheets 'bundles/wtf/css/*' filter='cssrewrite' %}
+        <title>{% block title %}World Tech Fest - WTF {% endblock %}</title>
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Play|Press+Start+2P" rel="stylesheet">
+            {% stylesheets 'bundles/wtf/css/*' filter='cssrewrite' %}
             <link rel="stylesheet" href="{{ asset_url }}" />{% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />

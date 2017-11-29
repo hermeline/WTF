@@ -1,16 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Conference creation</h1>
+    <h1>Ajouter une conference</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="blocNew">
+        {{ form_start(form) }}
+        <div class="interieurNew">
+            {{ form_errors(form) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.description) }}
+        </div>
+        <div class="interieurNew">
+            {{ form_row(form.lieu) }}
+            {{ form_row(form.date) }}
+        </div>
+        <div class="interieurNew">
+            {{ form_row(form.image) }}
+        </div>
+        <div class="btn">
+            <input type="submit" value="Créer la conférence" />
+        </div>
+        {{ form_end(form) }}
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('conference_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <a href="{{ path('conference_index') }}">Retour à la liste</a>
+
 {% endblock %}

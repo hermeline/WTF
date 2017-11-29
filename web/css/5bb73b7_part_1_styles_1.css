@@ -1,14 +1,68 @@
+::-moz-selection { /*@bugfix mozilla*/
+    background: lawngreen;
+    color: #fff
+}
+::selection {
+    background: lawngreen;
+    color: #fff;
+}
 body{background-color: #383838;
-color:lightgrey;}
+    font-family: 'Play', sans-serif;
+    color:lightgrey;}
 h1, h2{
     color:#379617;
     margin-bottom: 10%;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
 }
 .logged{text-align: right;}
 img{max-height: 300px; max-width: 300px;}
-
 .liste{display:flex; justify-content: space-between; flex-direction: column;}
-.elementListe{display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid lawngreen;}
-.infoListe, .contenuListe{display: flex; justify-content: space-between;}
-.description, .image{width: 48%}
+.elementListe, .blocNew {
+    background-color: rgba(232,255,217, 0.3);
+    padding:2%;
+    margin-bottom:50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lawngreen;
+    border-top: 1px solid lawngreen;}
+form {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.elementListe{ flex-direction: column;}
+.infoListe, .contenuListe {display: flex; justify-content: space-around;}
+.interieurNew {display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 30%;
+}
+label{
+    margin-right: 5%;
+}
+.btn {width: 100%; text-align: center; margin-top: 30px;}
+.btn input[type=submit]{
+    background-color: #41B21B;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    font-family: 'Press Start 2P', cursive;
+}
+.btn input[type=submit]:hover{
+    background-color:#54E523;
+}
+.description, .image { width:50%;}
 .addedBy{width:100%; text-align: right;}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+}
+textarea:focus, input[type=text]:focus {
+    border: 2px solid lawngreen;
+}
+input, textarea {
+    margin-bottom: 20px;
+}
