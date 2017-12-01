@@ -55,7 +55,7 @@ input, textarea {
 }
 .btn {width: 100%; text-align: center; margin-top: 30px;}
 .btnEdit{ width: 100%; display: flex; justify-content: center; margin-top: 30px;}
-.btn input[type=submit], .btnEdit input[type=submit], .lienModif {
+.btn input[type=submit], .btnEdit input[type=submit]{
     background-color: #41B21B;
     border: none;
     color: white;
@@ -66,12 +66,12 @@ input, textarea {
 }
 .btnEdit input[type=submit].supp {background-color: #E50B00; margin-left: 30px;}
 .btnEdit input[type=submit].supp:hover {background-color: #FF0C00;}
-.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover, .lienModif:hover {
+.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover{
     background-color:#54E523;
-    color:#fff;
 }
 .blocShow {flex-direction: column;}
 .infoShow {width: 40%;}
 div.blocShow h2, .titleShow, .contenuShow {margin-bottom: 0;}
 .contenuShow, .infoShow {min-height: 30em; align-items: center; }
 div.imageShow img {max-width: 450px; max-height: 430px; }
+.infoShow{flex-wrap: wrap;}

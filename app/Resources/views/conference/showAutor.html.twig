@@ -1,11 +1,11 @@
 {% extends 'show.html.twig' %}
 
 {% block Options %}
-
-            <a href="{{ path('conference_edit', { 'id': conference.id }) }}">Edit</a>
+<div class="btnEdit">
+            <a class="lienModif" href="{{ path('conference_edit', { 'id': conference.id }) }}">Modifier la conférence</a>
 
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" class="supp" value="Supprimer">
             {{ form_end(delete_form) }}
-
+</div>
 {% endblock %}

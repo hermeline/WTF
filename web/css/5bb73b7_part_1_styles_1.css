@@ -17,10 +17,10 @@ h1, h2{
 }
 a{ color : #41B21B; text-decoration: none;}
 a:hover {color: #54E523;}
-.logged{text-align: right;}
 img{max-height: 300px; max-width: 300px;}
-.liste{display:flex; justify-content: space-between; flex-direction: column;}
-.elementListe, .blocNew {
+.logged{text-align: right;}
+.liste, .infoShow{display:flex; justify-content: space-between; flex-direction: column;}
+.elementListe, .blocNew, .contenuShow {
     background-color: rgba(232,255,217, 0.3);
     padding:2%;
     margin-bottom:50px;
@@ -28,33 +28,17 @@ img{max-height: 300px; max-width: 300px;}
     justify-content: space-between;
     border-bottom: 1px solid lawngreen;
     border-top: 1px solid lawngreen;}
-form {display: flex; justify-content: space-between; flex-wrap: wrap;}
 .elementListe{ flex-direction: column;}
-.infoListe, .contenuListe {display: flex; justify-content: space-around;}
+.infoListe, .contenuListe, .blocShow {display: flex; justify-content: space-around;}
+.description, .image { width:50%;}
+.addedBy{width:100%; text-align: right;}
+form {display: flex; justify-content: space-between; flex-wrap: wrap;}
 .interieurNew {display:flex;
     justify-content: space-around;
     flex-direction: column;
     width: 30%;
 }
-label{  margin-right: 5%;  }
-.btn {width: 100%; text-align: center; margin-top: 30px;}
-.btnEdit{ width: 100%; display: flex; justify-content: center; margin-top: 30px;}
-.btn input[type=submit], .btnEdit input[type=submit]{
-    background-color: #41B21B;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    font-family: 'Press Start 2P', cursive;
-}
-.btnEdit input[type=submit].supp {background-color: #E50B00; margin-left: 30px;}
-.btnEdit input[type=submit].supp:hover {background-color: #FF0C00;}
-.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover{
-    background-color:#54E523;
-}
-.description, .image { width:50%;}
-.addedBy{width:100%; text-align: right;}
+label{margin-right: 5%;}
 textarea {
     width: 100%;
     height: 150px;
@@ -69,3 +53,25 @@ textarea:focus, input[type=text]:focus {
 input, textarea {
     margin-bottom: 20px;
 }
+.btn {width: 100%; text-align: center; margin-top: 30px;}
+.btnEdit{ width: 100%; display: flex; justify-content: center; margin-top: 30px;}
+.btn input[type=submit], .btnEdit input[type=submit], .lienModif {
+    background-color: #41B21B;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    font-family: 'Press Start 2P', cursive;
+}
+.btnEdit input[type=submit].supp {background-color: #E50B00; margin-left: 30px;}
+.btnEdit input[type=submit].supp:hover {background-color: #FF0C00;}
+.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover, .lienModif:hover {
+    background-color:#54E523;
+    color:#fff;
+}
+.blocShow {flex-direction: column;}
+.infoShow {width: 40%;}
+div.blocShow h2, .titleShow, .contenuShow {margin-bottom: 0;}
+.contenuShow, .infoShow {min-height: 30em; align-items: center; }
+div.imageShow img {max-width: 450px; max-height: 430px; }
