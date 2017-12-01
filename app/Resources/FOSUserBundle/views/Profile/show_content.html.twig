@@ -1,50 +1,40 @@
 {% trans_default_domain 'FOSUserBundle' %}
+<div class="blocProfil">
+    <h2>Mon profil</h2>
+    <div class="fos_user_user_show elementProfil">
+        <div class="profil">
+            <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        </div>
+        <div class="profil  profilb">
+            <a class="lienModif" href="{{ path('conference_new') }}">Ajouter une conférence</a>
+        </div>
+    </div>
 
-<h2>Mon profil</h2>
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
 
-<div>
-    <a href="{{ path('conference_new') }}">Ajouter une conférence</a>
-</div>
-
-<h2>Mes conférences :</h2>
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>Titre</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Lieu</th>
-            <th>Image</th>
-            <th>Actions</th>
-            <th>Auteur</th>
-        </tr>
-        </thead>
-        <tbody>
+    <h2>Mes conférences :</h2>
+    <div class="listeProfil">
         {% for conference in conferences %}
-            <tr>
-                <td>{{ conference.title }}</td>
-                <td>{{ conference.description }}</td>
-                <td>{% if conference.date %} {{ conference.date|date('Y-m-d H:i:s') }} {% endif %}</td></td>
-                <td>{{ conference.lieu }}</td>
-                <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('conference_show', { 'id': conference.id }) }}">Voir plus</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('conference_edit', { 'id': conference.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
-                </td>
-                <td>{{ conference.auteur }}</td>
-            </tr>
+            <div class="elementListe">
+                <div class="infoListeProfil">
+                    <div><h3>{{ conference.title }} </h3> </div>
+                    <div><h4>{{ conference.lieu }}</h4>
+                        {% if conference.date %} {{ conference.date|date('d-m-Y H:i') }} {% endif %}
+                    </div>
+                </div>
+                <div class="contenuListeProfil">
+                    <div class="description">
+                        <p>{{ conference.description[:255] }} [...]</p>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('uploads/image/' ~ conference.image) }}">
+                    </div>
+                </div>
+                <div class="actions">
+                    <a class="lienModif" href="{{ path('conference_show', { 'id': conference.id }) }}">Voir plus</a>
+                    <a class="lienModif" href="{{ path('conference_edit', { 'id': conference.id }) }}">Modifier</a>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 </div>

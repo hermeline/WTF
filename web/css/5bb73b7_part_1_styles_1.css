@@ -19,8 +19,8 @@ a{ color : #41B21B; text-decoration: none;}
 a:hover {color: #54E523;}
 img{max-height: 300px; max-width: 300px;}
 .logged{text-align: right;}
-.liste, .infoShow{display:flex; justify-content: space-between; flex-direction: column;}
-.elementListe, .blocNew, .contenuShow {
+.liste, .infoShow, .listeProfil {display:flex; justify-content: space-between; flex-direction: column;}
+.elementListe, .blocNew, .contenuShow, .elementProfil {
     background-color: rgba(232,255,217, 0.3);
     padding:2%;
     margin-bottom:50px;
@@ -28,8 +28,8 @@ img{max-height: 300px; max-width: 300px;}
     justify-content: space-between;
     border-bottom: 1px solid lawngreen;
     border-top: 1px solid lawngreen;}
-.elementListe{ flex-direction: column;}
-.infoListe, .contenuListe, .blocShow {display: flex; justify-content: space-around;}
+.elementListe { flex-direction: column; justify-content: space-between;}
+.infoListe, .contenuListe, .blocShow, .infoListeProfil, .contenuListeProfil, .actions {display: flex; justify-content: space-around;}
 .description, .image { width:50%;}
 .addedBy{width:100%; text-align: right;}
 form {display: flex; justify-content: space-between; flex-wrap: wrap;}
@@ -75,3 +75,13 @@ input, textarea {
 div.blocShow h2, .titleShow, .contenuShow {margin-bottom: 0;}
 .contenuShow, .infoShow {min-height: 30em; align-items: center; }
 div.imageShow img {max-width: 450px; max-height: 430px; }
+.elementListe {padding-top: 10px; padding-bottom: 5px;}
+.elementProfil{ margin-bottom: 10%;}
+.listeProfil>div.elementListe { flex-direction: row;}
+.actions, .infoListeProfil {flex-direction: column; align-items: center;}
+.actions { width: 22%;}
+.infoListeProfil {width: 15%;}
+.contenuListeProfil {width : 45%;}
+.profil {width: 40%;}
+.profilb {display: flex; align-items: center;}
+.blocProfil h2{margin-bottom: 2%;}

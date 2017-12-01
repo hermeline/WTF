@@ -19,7 +19,7 @@ a{ color : #41B21B; text-decoration: none;}
 a:hover {color: #54E523;}
 img{max-height: 300px; max-width: 300px;}
 .logged{text-align: right;}
-.liste, .infoShow{display:flex; justify-content: space-between; flex-direction: column;}
+.liste, .infoShow, .listeProfil {display:flex; justify-content: space-between; flex-direction: column;}
 .elementListe, .blocNew, .contenuShow {
     background-color: rgba(232,255,217, 0.3);
     padding:2%;
@@ -28,8 +28,8 @@ img{max-height: 300px; max-width: 300px;}
     justify-content: space-between;
     border-bottom: 1px solid lawngreen;
     border-top: 1px solid lawngreen;}
-.elementListe{ flex-direction: column;}
-.infoListe, .contenuListe, .blocShow {display: flex; justify-content: space-around;}
+.elementListe { flex-direction: column; justify-content: space-between;}
+.infoListe, .contenuListe, .blocShow, .infoListeProfil, .contenuListeProfil, .actions {display: flex; justify-content: space-around;}
 .description, .image { width:50%;}
 .addedBy{width:100%; text-align: right;}
 form {display: flex; justify-content: space-between; flex-wrap: wrap;}
@@ -55,7 +55,7 @@ input, textarea {
 }
 .btn {width: 100%; text-align: center; margin-top: 30px;}
 .btnEdit{ width: 100%; display: flex; justify-content: center; margin-top: 30px;}
-.btn input[type=submit], .btnEdit input[type=submit]{
+.btn input[type=submit], .btnEdit input[type=submit], .lienModif {
     background-color: #41B21B;
     border: none;
     color: white;
@@ -66,12 +66,17 @@ input, textarea {
 }
 .btnEdit input[type=submit].supp {background-color: #E50B00; margin-left: 30px;}
 .btnEdit input[type=submit].supp:hover {background-color: #FF0C00;}
-.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover{
+.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover, .lienModif:hover {
     background-color:#54E523;
+    color:#fff;
 }
 .blocShow {flex-direction: column;}
 .infoShow {width: 40%;}
 div.blocShow h2, .titleShow, .contenuShow {margin-bottom: 0;}
 .contenuShow, .infoShow {min-height: 30em; align-items: center; }
 div.imageShow img {max-width: 450px; max-height: 430px; }
-.infoShow{flex-wrap: wrap;}
+.listeProfil div.elementListe {width: 100%; flex-direction: row;}
+.actions, .infoListeProfil {flex-direction: column; align-items: center;}
+.actions { width: 22%;}
+.infoListeProfil {width: 15%;}
+.contenuListeProfil {width : 45%;}
