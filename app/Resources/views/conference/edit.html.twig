@@ -1,21 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Conference edit</h1>
+    <h1>Modifier la conférence</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('conference_index') }}">Back to the list</a>
-        </li>
-        <li>
+    <div class="blocNew">
+        {{ form_start(edit_form) }}
+        <div class="interieurNew">
+            {{ form_row(edit_form.title) }}
+            {{ form_row(edit_form.description) }}
+        </div>
+        <div class="interieurNew">
+            {{ form_row(edit_form.lieu) }}
+            {{ form_row(edit_form.date) }}
+        </div>
+        <div class="interieurNew">
+            {{ form_row(edit_form.image) }}
+        </div>
+        <div class="btnEdit">
+            <input type="submit" value="Modifier" />
+            {{ form_end(edit_form) }}
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" class="supp" value="Supprimer"/>
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+    </div>
+
+            <a href="{{ path('conference_index') }}">Retour à la liste</a>
+
+
 {% endblock %}
