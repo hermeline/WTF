@@ -13,7 +13,7 @@ body{background-color: #383838;
 }
 h1, h2{
     color:#379617;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     text-shadow: black 5px 5px 10px;
@@ -102,5 +102,5 @@ div #fos_user_registration_form {display:flex; flex-direction: row; flex-wrap: w
     font-size: 3em;
     color: #41B21B;
 }
-.container {margin: 2%;}
-h1{margin-top: 1%;}
+.btnAccueil{text-align: right; margin-top: 1%;}
+.container {margin: 2%; padding-top: 3%;}
