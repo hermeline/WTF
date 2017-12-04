@@ -50,9 +50,7 @@ class ConferenceController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $currentId = $this->getUser()->getId();
-            $conference->setAuteur($currentId);
-
+            $conference->setAuteur($this->getUser());
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file  **/
             $file=$conference->getImage();
             if($file instanceof UploadedFile){
