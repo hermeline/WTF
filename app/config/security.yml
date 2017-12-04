@@ -25,7 +25,14 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
-            logout:       true
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                # login success redirecting options (read further below)
+                default_target_path: fos_user_profile_show
+
+            logout:
+                path:   fos_user_security_logout
+                target: /conference
             anonymous:    true
 
     access_control:
