@@ -8,26 +8,31 @@
 }
 body{background-color: #383838;
     font-family: 'Play', sans-serif;
-    color:lightgrey;}
+    color:lightgrey;
+    margin: 0;
+}
 h1, h2{
     color:#379617;
     margin-bottom: 10%;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
+    text-shadow: black 5px 5px 10px;
 }
 a{ color : #41B21B; text-decoration: none;}
 a:hover {color: #54E523;}
 img{max-height: 300px; max-width: 300px;}
-.logged{text-align: right;}
+.logged{text-align: right; padding:1%;}
 .liste, .infoShow, .listeProfil {display:flex; justify-content: space-between; flex-direction: column;}
-.elementListe, .blocNew, .contenuShow {
+.elementListe, .blocNew, .contenuShow, .elementProfil, .bloc {
     background-color: rgba(232,255,217, 0.3);
     padding:2%;
     margin-bottom:50px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lawngreen;
-    border-top: 1px solid lawngreen;}
+    border-top: 1px solid lawngreen;
+    box-shadow: black 2px 2px 10px;
+}
 .elementListe { flex-direction: column; justify-content: space-between;}
 .infoListe, .contenuListe, .blocShow, .infoListeProfil, .contenuListeProfil, .actions {display: flex; justify-content: space-around;}
 .description, .image { width:50%;}
@@ -47,7 +52,7 @@ textarea {
     border-radius: 4px;
     resize: none;
 }
-textarea:focus, input[type=text]:focus {
+textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
     border: 2px solid lawngreen;
 }
 input, textarea {
@@ -75,8 +80,27 @@ input, textarea {
 div.blocShow h2, .titleShow, .contenuShow {margin-bottom: 0;}
 .contenuShow, .infoShow {min-height: 30em; align-items: center; }
 div.imageShow img {max-width: 450px; max-height: 430px; }
-.listeProfil div.elementListe {width: 100%; flex-direction: row;}
-.actions, .infoListeProfil {flex-direction: column; align-items: center;}
+.elementListe {padding-top: 10px; padding-bottom: 5px;}
+.elementProfil{ margin-bottom: 10%;}
+.listeProfil>div.elementListe { flex-direction: row;}
+.actions, .infoListeProfil, .registrationConfirmed {flex-direction: column; align-items: center;}
 .actions { width: 22%;}
 .infoListeProfil {width: 15%;}
 .contenuListeProfil {width : 45%;}
+.profil {width: 40%;}
+.profilb {display: flex; align-items: center;}
+.blocProfil h2{margin-bottom: 2%;}
+.bloc {width: 70%; margin-left: auto; margin-right: auto; margin-top: 10%;}
+div #fos_user_registration_form {display:flex; flex-direction: row; flex-wrap: wrap; justify-content: center;}
+#fos_user_registration_form div{width: 50em; text-align: center;}
+.header{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/36/Mirai-botnet-linked-to-massive-ddos-attacks-on-dyn-dns-gif.gif) no-repeat center center fixed;
+    height: 350px;
+    background-size: cover;
+}
+.webTitle{
+    font-size: 3em;
+    color: #41B21B;
+}
+.container {margin: 2%;}
+h1{margin-top: 1%;}
