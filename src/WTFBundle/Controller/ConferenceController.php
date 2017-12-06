@@ -81,8 +81,8 @@ class ConferenceController extends Controller
      */
     public function showAction(Conference $conference)
     {
-        $currentId = $this->getUser()->getId();
-        if ($currentId == $conference->getId()) {
+        $currentUser = $this->getUser();
+        if ($currentUser == $conference->getAuteur()) {
             $deleteForm = $this->createDeleteForm($conference);
             return $this->render('conference/showAutor.html.twig', array(
                 'conference' => $conference,
@@ -102,8 +102,8 @@ class ConferenceController extends Controller
      */
     public function editAction(Request $request, Conference $conference)
     {
-        $currentId = $this->getUser()->getId();
-        if ($currentId == $conference->getId()) {
+        $currentId = $this->getUser();
+        if ($currentId == $conference->getAuteur()) {
             $deleteForm = $this->createDeleteForm($conference);
             $editForm = $this->createForm('WTFBundle\Form\ConferenceType', $conference);
             $editForm->handleRequest($request);
@@ -118,7 +118,7 @@ class ConferenceController extends Controller
                 $conference->setImage($fileName);
                 $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('conference_edit', array('id' => $conference->getId()));
+                return $this->redirectToRoute('conference_show', array('id' => $conference->getId()));
             }
 
             return $this->render('conference/edit.html.twig', array(
@@ -140,8 +140,8 @@ class ConferenceController extends Controller
      */
     public function deleteAction(Request $request, Conference $conference)
     {
-        $currentId = $this->getUser()->getId();
-        if ($currentId == $conference->getId()) {
+        $currentId = $this->getUser();
+        if ($currentId == $conference->getAuteur()) {
             $form = $this->createDeleteForm($conference);
             $form->handleRequest($request);
 

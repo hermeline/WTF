@@ -105,3 +105,5 @@ div #fos_user_registration_form, div.login form {display:flex; flex-direction: r
 .btnAccueil{text-align: right; margin-top: 1%;}
 .container {margin: 2%; padding-top: 1%;}
 .login{margin-top:0;}
+.footer{border-top: 3px solid #308514; height: 70px; display: flex; justify-content: space-around; align-items: center;}
+.footer div{text-align: center;}

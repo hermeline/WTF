@@ -42,9 +42,7 @@ class ProfileController extends Controller
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('Vous n\'avez pas accès à cette section .');
         }
-
-        $user= $this->getUser();
-        $currentId= $user->getId();
+        
         $em = $this->getDoctrine()->getManager();
 
         $conferences = $em->getRepository('WTFBundle:Conference')->findByAuteur($user);
