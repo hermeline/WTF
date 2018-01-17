@@ -2,22 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    {% block stylesheets %}     {% stylesheets 'bundles/wtf/css/*' filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Play|Press+Start+2P" rel="stylesheet">
+        {% stylesheets 'bundles/wtf/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />{% endstylesheets %}
+    {% endblock %}
 </head>
 <body>
-<div class="logged">
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-        <a href="{{ path('fos_user_security_logout') }}">
-            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-        </a>
-    {% else %}
-        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-    {% endif %}
-</div>
+    {% include('header.html.twig') %}
 
+<<<<<<< HEAD
 {% if app.request.hasPreviousSession %}
     {% for type, messages in app.session.flashbag.all() %}
         {% for message in messages %}
@@ -39,5 +33,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     {% endjavascripts %}{% endblock %}
+=======
+    <div class="container">
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </div>
+    {% include('footer.html.twig') %}
+>>>>>>> temp
 </body>
 </html>

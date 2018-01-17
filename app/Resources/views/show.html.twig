@@ -1,40 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Conference</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Titre</th>
-                <td>{{ conference.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ conference.description }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{% if conference.date %} {{ conference.date|date('Y-m-d H:i:s') }} {% endif %}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ conference.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="{{ asset('uploads/image/' ~ conference.image) }}"></td>
-            </tr>
-            <tr>
-                <th>Auteur</th>
-                <td>{{ conference.auteur }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="blocShow">
+        <div class="titleShow">
+            <h2>{{ conference.title }}</h2>
+            <p class="addedBy">ajouté par {{ conference.auteur }}</p>
+        </div>
+        <div class="contenuShow">
+            <div class="imageShow">
+                <img src="{{ asset('uploads/image/' ~ conference.image) }}">
+            </div>
+            <div class="infoShow">
+                <h3>{% if conference.date %} {{ conference.date|date('d-m-Y H:i') }} {% endif %}</h3>
+                <div class="description">
+                    <p>{{ conference.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <a href="{{ path('conference_index') }}">Back to the list</a>
 
     {% block Options %}
-    <div> </div>
     {% endblock %}
 {% endblock %}

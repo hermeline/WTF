@@ -1,0 +1,22 @@
+{% block header %}
+    <div class="header">
+        <div class="logged">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                Connecté en tant que
+                    <a href="{{ path('fos_user_profile_show')}}">
+                        {{ app.user.username }}
+                    </a> |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> |
+                <a href="{{ path('fos_user_registration_register') }}"> S'enregistrer </a>
+            {% endif %}
+        </div>
+        <h1 class="webTitle">World Tech Fest</h1>
+    </div>
+    <div class="btnAccueil">
+        <a class="lienModif" href="{{  path('conference_index') }}">Accueil</a>
+    </div>
+{% endblock %}

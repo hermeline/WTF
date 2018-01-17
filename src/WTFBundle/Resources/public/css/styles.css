@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{background-color: #383838;}
 h1{color: red;}
 
@@ -10,3 +11,114 @@ img{max-height: 300px; max-width: 300px;}
 .infoListe, .contenuListe{display: flex; justify-content: space-between;}
 .description, .image{width: 48%}
 .addedBy{width:100%; text-align: right;}
+=======
+::-moz-selection { /*@bugfix mozilla*/
+    background: lawngreen;
+    color: #fff
+}
+::selection {
+    background: lawngreen;
+    color: #fff;
+}
+body{background-color: #383838;
+    font-family: 'Play', sans-serif;
+    color:lightgrey;
+    margin: 0;
+}
+h1, h2{
+    color:#379617;
+    margin-bottom: 6%;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    text-shadow: black 5px 5px 10px;
+}
+a{ color : #41B21B; text-decoration: none;}
+a:hover {color: #54E523;}
+img{max-height: 300px; max-width: 300px;}
+.logged{text-align: right; padding:1%;}
+.liste, .infoShow, .listeProfil {display:flex; justify-content: space-between; flex-direction: column;}
+.elementListe, .blocNew, .contenuShow, .elementProfil, .bloc {
+    background-color: rgba(232,255,217, 0.3);
+    padding:2%;
+    margin-bottom:50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lawngreen;
+    border-top: 1px solid lawngreen;
+    box-shadow: black 2px 2px 10px;
+}
+.elementListe { flex-direction: column; justify-content: space-between;}
+.infoListe, .contenuListe, .blocShow, .infoListeProfil, .contenuListeProfil, .actions {display: flex; justify-content: space-around;}
+.description, .image { width:50%;}
+.addedBy{width:100%; text-align: right;}
+form {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.interieurNew {display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 30%;
+}
+label{margin-right: 5%;}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+}
+textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    border: 2px solid lawngreen;
+}
+input, textarea {
+    margin-bottom: 20px;
+}
+.btn {width: 100%; text-align: center; margin-top: 30px;}
+.btnEdit{ width: 100%; display: flex; justify-content: center; margin-top: 30px;}
+.btn input[type=submit], .btnEdit input[type=submit], .lienModif {
+    background-color: #41B21B;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    font-family: 'Press Start 2P', cursive;
+}
+.btnEdit input[type=submit].supp {background-color: #E50B00; margin-left: 30px;}
+.btnEdit input[type=submit].supp:hover {background-color: #FF0C00;}
+.btn input[type=submit]:hover, .btnEdit input[type=submit]:hover, .lienModif:hover {
+    background-color:#54E523;
+    color:#fff;
+}
+.blocShow {flex-direction: column;}
+.infoShow {width: 40%;}
+div.blocShow h2, .titleShow, .contenuShow {margin-bottom: 0;}
+.contenuShow, .infoShow {min-height: 30em; align-items: center; }
+div.imageShow img {max-width: 450px; max-height: 430px; }
+.elementListe {padding-top: 10px; padding-bottom: 5px;}
+.elementProfil{ margin-bottom: 10%;}
+.listeProfil>div.elementListe { flex-direction: row;}
+.actions, .infoListeProfil, .registrationConfirmed {flex-direction: column; align-items: center;}
+.actions { width: 22%;}
+.infoListeProfil {width: 15%;}
+.contenuListeProfil {width : 45%;}
+.profil {width: 40%;}
+.profilb {display: flex; align-items: center;}
+.blocProfil h2{margin-bottom: 2%;}
+.bloc {width: 70%; margin-left: auto; margin-right: auto; margin-top: 10%;}
+div #fos_user_registration_form, div.login form {display:flex; flex-direction: row; flex-wrap: wrap; justify-content: center;}
+#fos_user_registration_form div, div.login form div {width: 50em; text-align: center;}
+.header{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/36/Mirai-botnet-linked-to-massive-ddos-attacks-on-dyn-dns-gif.gif) no-repeat center center fixed;
+    height: 350px;
+    background-size: cover;
+}
+.webTitle{
+    font-size: 3em;
+    color: #41B21B;
+}
+.btnAccueil{text-align: right; margin-top: 1%;}
+.container {margin: 2%; padding-top: 1%;}
+.login{margin-top:0;}
+.footer{border-top: 3px solid #308514; height: 70px; display: flex; justify-content: space-around; align-items: center;}
+.footer div{text-align: center;}
+>>>>>>> temp

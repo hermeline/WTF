@@ -3,6 +3,8 @@
 namespace WTFBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -15,14 +17,14 @@ class ConferenceType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')
-            ->add('description')
+        $builder->add('title', TextType::class, array('label'=>'Titre'))
+            ->add('description', TextareaType::class)
             ->add('date')
             ->add('lieu')
             ->add('image',
                 FileType::class, [
                     'data_class' => null,
-                    'label'=>'Picture(Image File)',
+                    'label'=>'Ajouter une image',
                     'attr'=>['class'=>'form-control']
                 ])
             ;
