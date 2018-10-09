@@ -21,11 +21,8 @@
     },
     "require": {
         "php": ">=5.5.9",
-<<<<<<< HEAD
         "components/jquery": "^3.2",
-=======
         "coresphere/console-bundle": "^0.5.0",
->>>>>>> temp
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "friendsofsymfony/user-bundle": "^2.0",
